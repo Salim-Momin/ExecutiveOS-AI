@@ -1,0 +1,49 @@
+.pixel-border {
+
+border:
+
+2px solid #00E5FF;
+
+box-shadow:
+
+0 0 10px rgba(0,229,255,0.5);
+
+}
+
+
+
+.pixel-panel {
+
+
+background:
+
+linear-gradient(
+135deg,
+#111827,
+#070B14
+);
+
+
+border:
+
+2px solid #1f2937;
+
+
+image-rendering:
+
+pixelated;
+
+
+}
+
+
+
+.pixel-glow {
+
+
+box-shadow:
+
+0 0 20px #00E5FF;
+
+
+}
