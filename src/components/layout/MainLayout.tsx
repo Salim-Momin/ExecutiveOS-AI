@@ -2,7 +2,7 @@ import TopBar from "./TopBar";
 import Sidebar from "./Sidebar";
 import ActivityFeed from "../panels/ActivityFeed";
 import CommandBar from "../panels/CommandBar";
-
+import PhaserGame from "../game/PhaserGame";
 
 export default function MainLayout(){
 
@@ -55,7 +55,7 @@ pixel-font
 "
 >
 
-PHASER OFFICE
+<PhaserGame/>
 
 </div>
 
