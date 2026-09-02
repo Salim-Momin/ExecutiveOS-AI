@@ -1,3 +1,5 @@
+"use client";
+
 import Phaser from "phaser";
 
 import BootScene from "./scenes/BootScene";
@@ -9,42 +11,30 @@ export const PhaserConfig: Phaser.Types.Core.GameConfig = {
 
 type: Phaser.AUTO,
 
+width:"100%",
 
-width:1280,
-
-height:720,
-
+height:"100%",
 
 parent:"game-container",
 
+pixelArt:true,
+
+render:{
+    antialias:false
+},
+
+scale:{
+    mode: Phaser.Scale.RESIZE,
+    autoCenter: Phaser.Scale.CENTER_BOTH
+},
 
 backgroundColor:"#070B14",
 
 
-pixelArt:true,
-
-
-physics:{
-
-default:"arcade",
-
-arcade:{
-
-debug:false
-
-}
-
-},
-
-
 scene:[
-
 BootScene,
-
 PreloadScene,
-
 OfficeScene
-
 ]
 
 };

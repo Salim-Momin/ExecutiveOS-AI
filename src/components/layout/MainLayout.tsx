@@ -1,16 +1,23 @@
+"use client";
+
 import TopBar from "./TopBar";
 import Sidebar from "./Sidebar";
+
 import ActivityFeed from "../panels/ActivityFeed";
 import CommandBar from "../panels/CommandBar";
+
 import PhaserGame from "../game/PhaserGame";
+
 
 export default function MainLayout(){
 
-return(
+return (
 
 <div
 className="
+w-screen
 h-screen
+overflow-hidden
 flex
 flex-col
 bg-[#070B14]
@@ -18,51 +25,50 @@ bg-[#070B14]
 >
 
 
+{/* TOP BAR */}
+
 <TopBar/>
 
 
+
+{/* MAIN CONTENT */}
+
 <div
 className="
-flex
 flex-1
+flex
 overflow-hidden
 "
 >
 
 
+{/* SIDEBAR */}
+
 <Sidebar/>
 
 
+
+{/* PHASER AREA */}
+
 <main
+
 className="
 flex-1
-flex
-items-center
-justify-center
+relative
+overflow-hidden
 "
->
 
-
-<div
-className="
-w-full
-h-full
-flex
-items-center
-justify-center
-text-cyan-400
-pixel-font
-"
 >
 
 <PhaserGame/>
-
-</div>
 
 
 </main>
 
 
+
+
+{/* ACTIVITY */}
 
 <ActivityFeed/>
 
@@ -71,11 +77,13 @@ pixel-font
 
 
 
+{/* COMMAND BAR */}
+
 <CommandBar/>
 
 
 </div>
 
-)
+);
 
 }

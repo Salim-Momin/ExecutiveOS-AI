@@ -6,28 +6,18 @@ return(
 
 className="
 h-16
-
+shrink-0
 flex
-
 items-center
-
 justify-between
-
 px-6
-
 bg-[#050914]
-
 border-b
-
 border-cyan-400/30
-
 "
 
-
 >
-
-
-<h1
+    <h1
 
 className="
 pixel-font

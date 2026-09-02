@@ -15,20 +15,62 @@ super("OfficeScene");
 create(){
 
 
-this.add.text(
-100,
-100,
-"EXECUTIVEOS HQ",
-{
+const office =
+this.add.image(
+0,
+0,
+"executive_hq"
+);
 
-fontFamily:"Pixelify Sans",
 
-fontSize:"32px",
 
-color:"#00E5FF"
+office.setOrigin(0);
 
-}
 
+
+const scaleX =
+this.scale.width /
+office.width;
+
+
+const scaleY =
+this.scale.height /
+office.height;
+
+
+
+const scale =
+Math.min(
+this.scale.width / office.width,
+this.scale.height / office.height
+);
+
+
+office.setScale(scale);
+
+
+office.setPosition(
+this.scale.width / 2,
+this.scale.height / 2
+);
+
+
+office.setOrigin(0.5);
+
+
+
+this.cameras.main.setBounds(
+0,
+0,
+office.width,
+office.height
+);
+
+
+
+this.cameras.main.centerOn(
+office.width/2,
+office.height/2
 );
 
 

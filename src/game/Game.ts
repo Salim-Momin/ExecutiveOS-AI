@@ -1,36 +1,37 @@
 import Phaser from "phaser";
 
-import {PhaserConfig} from "./config";
+import { PhaserConfig } from "./config";
 
 
-export default class Game {
+let game: Phaser.Game | null = null;
 
 
-private game?: Phaser.Game;
+export function startGame() {
+
+    if (game) {
+        return;
+    }
 
 
-
-start(){
-
-if(this.game)
-return;
-
-
-this.game = new Phaser.Game(
-PhaserConfig
-);
+    game = new Phaser.Game(
+        PhaserConfig
+    );
 
 
 }
 
 
 
-destroy(){
+export function destroyGame() {
 
-this.game?.destroy(true);
+    if (!game) {
+        return;
+    }
 
-}
+
+    game.destroy(true);
 
 
+    game = null;
 
 }

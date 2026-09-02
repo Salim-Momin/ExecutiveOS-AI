@@ -33,6 +33,7 @@ return(
 
 className="
 w-64
+shrink-0
 p-4
 bg-[#050914]
 "

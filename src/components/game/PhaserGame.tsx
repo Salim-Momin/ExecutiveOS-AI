@@ -1,51 +1,58 @@
 "use client";
 
-
-import {useEffect} from "react";
-
-import Game from "@/game/Game";
+import { useEffect } from "react";
 
 
-export default function PhaserGame(){
+export default function PhaserGame() {
+
+    useEffect(() => {
+
+        let destroyGame: (() => void) | null = null;
 
 
-useEffect(()=>{
+        async function loadGame() {
+
+            const gameModule = await import("@/game/Game");
+
+            gameModule.startGame();
+
+            destroyGame = gameModule.destroyGame;
+
+        }
 
 
-const game =
-new Game();
+        loadGame();
 
 
-game.start();
+        return () => {
+
+            if (destroyGame) {
+
+                destroyGame();
+
+            }
+
+        };
 
 
-
-return()=>{
-
-game.destroy();
-
-}
+    }, []);
 
 
+    return (
 
-},[]);
-
-
-
-return(
-
-<div
+        <div
 
 id="game-container"
 
 className="
+absolute
+inset-0
 w-full
 h-full
 "
 
-></div>
+/>
 
-)
-
+    );
 
 }
